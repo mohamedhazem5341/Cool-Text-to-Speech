@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="/main.js"></script>
+    <title>Cool Text-to-Speech</title>
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>Text-to-Speech Reader</h1>
+      <div class="card">
+        <!-- Left: Text -->
+        <div>
+          <label for="text">Enter text</label>
+          <textarea
+            id="text"
+            placeholder="Paste or type text here..."
+          ></textarea>
+        </div>
+
+        <!-- Right: Controls -->
+        <div>
+          <label for="voice">Voice</label>
+          <select id="voice"></select>
+          <div
+            id="voice-note"
+            style="font-size: 0.8rem; color: var(--muted); margin-bottom: 10px"
+          >
+            Loading voices…
+          </div>
+
+          <label for="rate">Rate <span id="rate-val">1.0</span></label>
+          <input
+            id="rate"
+            type="range"
+            min="0.5"
+            max="2"
+            step="0.1"
+            value="1"
+          />
+
+          <label for="pitch">Pitch <span id="pitch-val">1.0</span></label>
+          <input id="pitch" type="range" min="0" max="2" step="0.1" value="1" />
+
+          <label for="volume">Volume <span id="volume-val">1.0</span></label>
+          <input
+            id="volume"
+            type="range"
+            min="0"
+            max="1"
+            step="0.05"
+            value="1"
+          />
+
+          <div class="row" style="margin-top: 8px">
+            <input id="sel-only" type="checkbox" />
+            <label for="sel-only" style="margin: 0">Speak selection only</label>
+          </div>
+
+          <div class="btns" style="margin-top: 14px">
+            <button id="play">Play</button>
+            <button id="pause" class="ghost">Pause</button>
+            <button id="resume" class="ghost">Resume</button>
+            <button id="stop" class="ghost">Stop</button>
+          </div>
+
+          <div class="btns" style="margin-top: 8px">
+            <button id="save-settings" class="ghost">Save settings</button>
+            <button id="clear-settings" class="ghost">Clear</button>
+          </div>
+
+          <div class="status" style="margin-top: 12px">
+            <div id="dot" class="dot"></div>
+            <div id="status-text">idle</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        To get more Language voices: <br />
+        Windows → Settings → Time & Language → Language → (Add a Language) → Install
+        "Speech" pack.
+        <br /><br />
+        macOS → System Settings → Accessibility → Spoken Content → System Voice
+        → (Add a Language voices).
+        <br /><br />
+        Android → Settings → Language & Input → Text-to-Speech Output → (Install a Language).
+        <br /><br />
+        ChromeOS → Settings → Advanced → Accessibility → Text-to-Speech → Manage
+        voices.
+        <br /><br />
+        Then reopen the browser.
+      </div>
+      <div class="credit">
+        Made with ❤️ by
+        <a
+          class="creator"
+          href="https://github.com/mohamedhazem5341"
+          target="_blank"
+          >Mohamed Hazem</a
+        >
+      </div>
+    </div>
+  </body>
+</html>

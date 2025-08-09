@@ -1,0 +1,233 @@
+  :root {
+      --bg: #8e9092;
+      --card: rgba(255, 255, 255, 0.05);
+      --muted: #e4ecf7;
+      --accent: #ff4d6d;
+      --accent2: #6b46ff;
+      --radius: 16px;
+      --blur: 16px;
+      --text: #d3d0d0;
+      --dark-text: #000000;
+  }
+
+  * {
+      box-sizing: border-box;
+  }
+
+  /* html::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: conic-gradient(from 0deg, #4e5053, #0b1220);
+    animation: rotateBg 10s linear infinite;
+    z-index: -1;
+      animation: bg-animation 5s infinite alternate ease-in-out;
+  } */
+
+  html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--text);
+      min-height: 100%;
+      background: linear-gradient(135deg, #003b42d5, #005a56be);
+      background-size: 200% 200%;
+      animation: bg-animation 5s infinite alternate ease-in-out;
+  }
+
+  @keyframes bg-animation {
+      0% {
+          background-position: 50% 0%;
+      }
+
+      25% {
+          background-position: 100% 50%;
+      }
+
+      50% {
+          background-position: 50% 100%;
+      }
+
+      75% {
+          background-position: 0% 50%;
+      }
+
+      100% {
+          background-position: 50% 0%;
+      }
+  }
+
+  .wrap {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+  }
+
+  h1 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 20px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+  }
+
+  .card {
+      background: var(--card);
+      backdrop-filter: blur(var(--blur));
+      border-radius: var(--radius);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      box-shadow: 0 8px 24px rgba(95, 95, 95, 0.4);
+      display: grid;
+      gap: 20px;
+  }
+
+  textarea {
+      width: 100%;
+      min-height: 300px;
+      border-radius: var(--radius);
+      border: none;
+      background: rgba(255, 255, 255, 0.07);
+      padding: 14px;
+      color: var(--text);
+      resize: none;
+      font-size: 1rem;
+  }
+
+  textarea::placeholder {
+      color: var(--muted);
+  }
+
+  textarea::-webkit-scrollbar {
+      background-color: var(--bg);
+      width: 8px;
+  }
+
+  textarea::-webkit-scrollbar-thumb {
+      background-color: var(--text);
+      border-radius: 4px;
+  }
+
+  textarea:focus {
+      outline: 2px solid var(--accent);
+  }
+
+  label {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 6px;
+      display: block;
+  }
+
+  select,
+  input[type=range],
+  input[type=number] {
+      width: 100%;
+      padding-block: 8px;
+      border-radius: var(--radius);
+      border: none;
+      background: rgba(255, 255, 255, 0.07);
+      color: var(--dark-text);
+  }
+
+  .row {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+  }
+
+  input[type=checkbox] {
+      accent-color: var(--accent);
+  }
+
+  .btns {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+
+  button {
+      padding: 10px 16px;
+      border-radius: var(--radius);
+      border: none;
+      background: var(--accent);
+      color: white;
+      font-weight: 500;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  }
+
+  button.ghost {
+      background: rgba(255, 255, 255, 0.07);
+  }
+
+  .status {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      color: var(--muted);
+  }
+
+  .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #334155;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .dot.playing {
+      background: #34d399;
+      box-shadow: 0 0 8px #34d399;
+  }
+
+  .dot.paused {
+      background: #b77b00;
+      box-shadow: 0 0 8px #b77b00;
+  }
+
+  .footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 10px;
+  }
+
+  .credit {
+    text-align: center;
+      margin-top: 16px;
+      font-size: 0.8rem;
+      color: var(--muted);
+  }
+
+  .creator {
+      font-size: clamp(.5rem, 2vw, 1rem);
+      font-weight: 600;
+      text-decoration: none;
+      background: linear-gradient(90deg, #770016, #2300b1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transition: all .3s ease;
+  }
+
+  .creator:hover {
+      font-weight: 700;
+      letter-spacing: 3px;
+  }
+
+  @media(min-width: 768px) {
+      .card {
+          grid-template-columns: 1fr 260px;
+          align-items: start;
+      }
+  }
